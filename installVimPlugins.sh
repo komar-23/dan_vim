@@ -97,6 +97,13 @@ else
   echo "${HOME}/${VIM_PACK_DIR}/vendor/start/surround exist."
 fi
 
+if [ ! -d "${HOME}/${VIM_PACK_DIR}/vendor/start/traces" ] ; then
+  mkdir "${HOME}/${VIM_PACK_DIR}/vendor/start/traces"
+  git clone https://github.com/markonm/traces.vim.git "${HOME}/${VIM_PACK_DIR}/vendor/start/traces"
+else
+  echo "${HOME}/${VIM_PACK_DIR}/vendor/start/traces exist."
+fi
+
 if [ ! -d "${HOME}/${VIM_PACK_DIR}/vendor/start/gruvbox" ] ; then
   mkdir "${HOME}/${VIM_PACK_DIR}/vendor/start/gruvbox"
   git clone https://github.com/morhetz/gruvbox.git "${HOME}/${VIM_PACK_DIR}/vendor/start/gruvbox"
