@@ -111,6 +111,13 @@ else
   echo "${HOME}/${VIM_PACK_DIR}/vendor/start/gruvbox exist."
 fi
 
+if [ ! -d "${HOME}/${VIM_PACK_DIR}/vendor/start/vim-tmux-navigator" ] ; then
+  mkdir "${HOME}/${VIM_PACK_DIR}/vendor/start/vim-tmux-navigator"
+  git clone git@github.com:christoomey/vim-tmux-navigator.git "${HOME}/${VIM_PACK_DIR}/vendor/start/vim-tmux-navigator"
+else
+  echo "${HOME}/${VIM_PACK_DIR}/vendor/start/vim-tmux-navigator exist."
+fi
+
 if [ ! -f "${HOME}/.vimrc" ] ; then
   cp ./.vimrc ${HOME}/.vimrc
 else
