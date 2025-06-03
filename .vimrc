@@ -114,14 +114,17 @@ inoremap jk <esc>
 nnoremap <SPACE> <Nop>
 let mapleader = ' '
 "map <Leader>d V:!/bin/date<cr>
-"
 
 set laststatus=2
 map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
+
 set nrformats=alpha,octal,hex,bin
+
+" All leader mappings
 nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
+nnoremap <leader>w :w<CR>
 
 let g:tmux_navigator_no_mappings = 1
 
