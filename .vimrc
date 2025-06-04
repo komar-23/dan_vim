@@ -2,11 +2,32 @@
 "https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/
 
 " SETTINGS ---------------------------------------------------------------- {{{
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
+
+"The shell used to execute commands
+set shell=/bin/bash
+
+"Enable mouse for scrolling and resizing
+set mouse=a
+
+"Enable project specific vimrc configuration (.vimrc must be in project "directory)
+"set exrc
+
 " Turn syntax highlighting on.
 syntax on
 
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
+"Use an encoding that supports Unicode
+set encoding=utf-8
+
+"Enable spell check
+" set spell
+
+"Set spell language
+"set spelllang=en,pl
+
+"Allow backspacing over indention, line breaks and insertion start.
+" set backspace=indent,eol,start
 
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
@@ -20,6 +41,9 @@ filetype indent on
 " Add numbers to each line on the left-hand side.
 set number
 set relativenumber
+
+" Always show cursor position.
+"set ruler
 
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline
@@ -50,8 +74,14 @@ set nobackup
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
 
+" The number of screen columns to keep to the left cursor.
+"set sidescrolloff=5
+
 " Do not wrap lines. Allow long lines to extend as far as the line goes.
 set nowrap
+
+"Wrap lins at convenient points, avoid wrapping a line in the middle of a "word.
+"set linebreak
 
 " While searching though a file incrementally highlight matching characters as you type.
 set incsearch
@@ -67,7 +97,7 @@ set smartcase
 set showcmd
 
 " Show the mode you are on the last line.
-set showmode
+" set showmode
 
 " Show matching words during a search.
 set showmatch
@@ -77,6 +107,9 @@ set hlsearch
 
 " Set the commands to save in history default number is 20.
 set history=1000
+
+"Inc/dec all num formats by usage of ctrl-a/ctrl-x
+set nrformats=alpha,octal,hex,bin
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu
@@ -119,12 +152,11 @@ set laststatus=2
 map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
 
-set nrformats=alpha,octal,hex,bin
-
 " All leader mappings
-nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>ee :NERDTreeToggle<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>n :set relativenumber!<CR>
 
 let g:tmux_navigator_no_mappings = 1
 
