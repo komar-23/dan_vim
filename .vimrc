@@ -97,7 +97,7 @@ set smartcase
 set showcmd
 
 " Show the mode you are on the last line.
-" set showmode
+set noshowmode
 
 " Show matching words during a search.
 set showmatch
@@ -132,12 +132,20 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 "https://github.com/tpope/vim-commentary.git
 "https://github.com/farmergreg/vim-lastplace.git
 "https://github.com/itchyny/lightline.vim.git
+if !has('gui_running')
+  set t_Co=256
+endif
 "https://github.com/preservim/nerdtree.git
 "https://github.com/kshenoy/vim-signature.git
 "https://github.com/christoomey/vim-sort-motion.git
 "https://github.com/mbbill/undotree.git
 "https://github.com/vimwiki/vimwiki.git
 "https://github.com/tpope/vim-surround.git
+"https://github.com/tpope/vim-bufferline.git
+" let g:bufferline_echo = 0
+" autocmd VimEnter *
+"   \ let &statusline='%{bufferline#refresh_status()}'
+"     \ .bufferline#get_status_string()
 "
 " }}}
 
@@ -165,6 +173,9 @@ nnoremap <silent> <c-j> :<C-U>TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :<C-U>TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :<C-U>TmuxNavigateRight<cr>
 nnoremap <silent> <c-\> :<C-U>TmuxNavigatePrevious<cr>
+
+nnoremap [b :bp<CR>
+nnoremap ]b :bn<CR>
 " }}}
 
 

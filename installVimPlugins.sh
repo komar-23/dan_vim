@@ -118,6 +118,13 @@ else
   echo "${HOME}/${VIM_PACK_DIR}/vendor/start/vim-tmux-navigator exist."
 fi
 
+if [ ! -d "${HOME}/${VIM_PACK_DIR}/vendor/start/bufferline" ] ; then
+  mkdir "${HOME}/${VIM_PACK_DIR}/vendor/start/bufferline"
+  git clone https://github.com/bling/vim-bufferline.git "${HOME}/${VIM_PACK_DIR}/vendor/start/bufferline"
+else
+  echo "${HOME}/${VIM_PACK_DIR}/vendor/start/bufferline exist."
+fi
+
 if [ ! -f "${HOME}/.vimrc" ] ; then
   cp ./.vimrc ${HOME}/.vimrc
 else
